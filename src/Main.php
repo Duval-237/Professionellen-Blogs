@@ -21,7 +21,7 @@ class Main
     session_set_cookie_params( [
       'lifetime' => time() + 365 * 24 * 3600,
       'path' => '/',
-      'domain' => 'technoghan.com',
+      'domain' => 'technogan.com',
       'secure' => FALSE,
       'httponly' => FALSE
     ]);
@@ -30,7 +30,7 @@ class Main
     
     // Recuperation de la langue du navigateur par son sous domaine
     $sous_domain = explode( '.', $_SERVER[ 'HTTP_HOST' ] )[0];
-    $_SESSION[ 'language' ] = $sous_domain !== "technoghan" ? $sous_domain : 'fr';
+    $_SESSION[ 'language' ] = $sous_domain !== "technogan" ? $sous_domain : 'fr';
     // J'appele le fichier concernant la langue
     require_once ROOT . "lib/lang/lang_{$_SESSION[ 'language' ]}.php";
 
@@ -110,7 +110,7 @@ class Main
       $options = [ 
         'expire' => time() + 365 * 24 * 3600,
         'path' => '/',
-        'domain' => 'technoghan.com',
+        'domain' => 'technogan.com',
         'secure' => FALSE,
         'httponly' => FALSE, // Bloquer Accessibilite par JS
         'samesite' => 'Strict'
