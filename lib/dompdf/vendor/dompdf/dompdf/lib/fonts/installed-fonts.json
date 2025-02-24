@@ -1,0 +1,7 @@
+{
+    "poppins": {
+        "normal": "C:\\xampp\\htdocs\\BLOGTUTO\\lib\\dompdf\\vendor\\dompdf\\dompdf\/lib\/fonts\/poppins_normal_fb1c40992fa96231767c931abb03df31",
+        "600": "C:\\xampp\\htdocs\\BLOGTUTO\\lib\\dompdf\\vendor\\dompdf\\dompdf\/lib\/fonts\/poppins_600_616ae36d4b35b7b50ae5f5a6244a8f98",
+        "500": "poppins_500_a081ad66040cfa65649160a7240c92ab"
+    }
+}
