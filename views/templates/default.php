@@ -15,7 +15,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="http://technogan.com/uploads/website/technogan.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://technogan.com/uploads/website/technogan.ico" type="image/x-icon">
     <title><?= $title_page ?? 'Technogan' ?></title>
     <meta name="title" content="<?= $title_page ?? TITLE_HEADER ?>">
     <meta name="description" content="<?= $description_page ?? DESCRIPTION_HEADER ?>">
@@ -24,23 +24,23 @@
     <meta name="generator" content="Technogan 1.0" >
     <meta name="theme-color" content="#007fff" >
     <meta property="og:type" content="article">
-    <meta property="og:image" content="http://technogan.com/uploads/articles/<?= $img_page ?? '' ?>">
+    <meta property="og:image" content="https://technogan.com/uploads/articles/<?= $img_page ?? '' ?>">
     <meta property="og:title" content="<?= $title_page ?? TITLE_HEADER ?>">
     <meta property="og:description" content="<?= $description_page ?? DESCRIPTION_HEADER ?>">
-    <meta property="og:url" content="http://<?= $url_page ?? $_SERVER[ 'HTTP_HOST' ] ?>">
+    <meta property="og:url" content="https://<?= $url_page ?? $_SERVER[ 'HTTP_HOST' ] ?>">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@Technogan1">
     <meta name="twitter:creator" content="@Technogan1">
-    <meta name="twitter:image" content="http://technogan.com/uploads/articles/<?= $img_page ?? '' ?>">
+    <meta name="twitter:image" content="https://technogan.com/uploads/articles/<?= $img_page ?? '' ?>">
     <meta name="twitter:title" content="<?= $title_page ?? TITLE_HEADER ?>">
     <meta name="twitter:description" content="<?= $description_page ?? DESCRIPTION_HEADER ?>">
-    <meta name="twitter:url" content="http://technogan.com/">
-    <link rel="alternate" hreflang="fr" href="http://technogan.com/<?= $slug_fr ?? '' ?>">
-    <link rel="alternate" hreflang="en" href="http://en.technogan.com/<?= $slug_en ?? '' ?>">
-    <link rel="alternate" hreflang="de" href="http://de.technogan.com/<?= $slug_de ?? '' ?>">
-    <link rel="alternate" hreflang="es" href="http://es.technogan.com/<?= $slug_es ?? '' ?>">
-    <link rel="alternate" hreflang="zh" href="http://zh.technogan.com/<?= $slug_zh ?? '' ?>">
-    <!-- [if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif] -->
+    <meta name="twitter:url" content="https://technogan.com/">
+    <link rel="alternate" hreflang="fr" href="https://technogan.com/<?= $slug_fr ?? '' ?>">
+    <link rel="alternate" hreflang="en" href="https://en.technogan.com/<?= $slug_en ?? '' ?>">
+    <link rel="alternate" hreflang="de" href="https://de.technogan.com/<?= $slug_de ?? '' ?>">
+    <link rel="alternate" hreflang="es" href="https://es.technogan.com/<?= $slug_es ?? '' ?>">
+    <link rel="alternate" hreflang="zh" href="https://zh.technogan.com/<?= $slug_zh ?? '' ?>">
+    <!-- [if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif] -->
     <link rel="stylesheet" href="/views/templates/css/style.css">
     <link rel="stylesheet" href="/views/templates/css/default.css">
     <link rel="stylesheet" href="/<?= $file_css ?? '' ?>">
@@ -505,31 +505,31 @@
             $lang = $_SESSION[ 'language' ] ?? 'fr';
           ?>
           <li class="item <?= $lang == 'en' ? 'enable' : ''; ?>" data-lang="en">
-            <a href="http://en.technogan.com/<?= $slug[ 'en' ] ?? '' ?>">
+            <a href="https://en.technogan.com/<?= $slug[ 'en' ] ?? '' ?>">
               <img src="/uploads/website/en.png" alt="">
               <span>English</span>
             </a>
           </li>
           <li class="item <?= $lang == 'de' ? 'enable' : ''; ?>" data-lang="de">
-            <a href="http://de.technogan.com/<?= $slug[ 'de' ] ?? '' ?>">
+            <a href="https://de.technogan.com/<?= $slug[ 'de' ] ?? '' ?>">
               <img src="/uploads/website/de.png" alt="">
               <span>Deutsch</span>
             </a>
           </li>
           <li class="item <?= $lang == 'fr' ? 'enable' : ''; ?>" data-lang="fr">
-            <a href="http://technogan.com/<?= $slug[ 'fr' ] ?? '' ?>">
+            <a href="https://technogan.com/<?= $slug[ 'fr' ] ?? '' ?>">
               <img src="/uploads/website/fr.png" alt="">
               <span>Français</span>
             </a>
           </li>
           <li class="item <?= $lang == 'es' ? 'enable' : ''; ?>" data-lang="es">
-            <a href="http://es.technogan.com/<?= $slug[ 'es' ] ?? '' ?>">
+            <a href="https://es.technogan.com/<?= $slug[ 'es' ] ?? '' ?>">
               <img src="/uploads/website/es.png" alt="">
               <span>Español</span>
             </a>
           </li>
           <li class="item <?= $lang == 'zh' ? 'enable' : ''; ?>" data-lang="zh">
-            <a href="http://zh.technogan.com/<?= $slug[ 'zh' ] ?? '' ?>">
+            <a href="https://zh.technogan.com/<?= $slug[ 'zh' ] ?? '' ?>">
               <img src="/uploads/website/zh.png" alt="">
               <span>中国人</span>
             </a>
@@ -549,7 +549,7 @@
           <div class="logo">
             <svg data-name="Calque 1"  viewBox="0 0 1597.67 193.82"><defs><style>.cls-2{fill:#007fff;}</style></defs><path class="cls-1" d="M1800.33,903.09v193.82h-60.42l-85.24-113.45v113.45h-99.31l-43-85.79L1469,1096.91H1283.59a60.27,60.27,0,0,1-60.42-60.43V963.8a60.33,60.33,0,0,1,60.42-60.71h115.72v48.46h-111a25,25,0,0,0-12.4,6.83,20.16,20.16,0,0,0-4.56,12.83v57.58a19.77,19.77,0,0,0,19.66,20h77.53v-24.53h-51.31V976.05h99.49v117.69L1484.85,958l-5-11.46-21.73-43.46H1512l.3.28,26.79,53.87,67.4,134.27V903.09h48.16v.28l97.49,129.41V903.09Z" transform="translate(-202.67 -903.09)"/><path class="cls-1" d="M536.64,1096.91h-142A60.52,60.52,0,0,1,334,1036.48V976.05H458.05v48.17H382.42c-.52,2.2,0,6.56,0,6.56a19.82,19.82,0,0,0,19.66,18h90.74v-.3S501.63,1092.41,536.64,1096.91Z" transform="translate(-202.67 -903.09)"/><path class="cls-1" d="M537.6,903.09c-35,4.5-43.81,48.45-43.81,48.45H306.14v145.37H258V951.54H202.67V903.09Z" transform="translate(-202.67 -903.09)"/><path class="cls-1" d="M548,971.21v57.58a19.84,19.84,0,0,0,20,20H676.24v48.16h-116a60.46,60.46,0,0,1-60.43-60.43V963.8a60.52,60.52,0,0,1,60.43-60.71h116v48.45H569.53c-9.29.54-16.71,6.84-16.71,6.84A18.9,18.9,0,0,0,548,971.21Z" transform="translate(-202.67 -903.09)"/><path class="cls-1" d="M1083.32,1096.91H963.55l-85.2-113.44v113.44H830.17v-72.69H733v72.69H684.51V903.09H733v73h97.2v-73h48.16v.28h0l97.45,129.4V903.09h107.52A60.44,60.44,0,0,0,1024,952.34v95.51A60.46,60.46,0,0,0,1083.32,1096.91Z" transform="translate(-202.67 -903.09)"/><path class="cls-2" d="M1168.56,971.21v57.58a19.84,19.84,0,0,1-20,20H1091a20,20,0,0,1-20-20V971.21a20.4,20.4,0,0,1,4.84-12.83s9.68-6.39,18.34-6.84h54.35A19.78,19.78,0,0,1,1168.56,971.21Z" transform="translate(-202.67 -903.09)"/><path class="cls-1" d="M1213.73,960.61c0,.51,0,1,0,1.38a60.5,60.5,0,0,0-60.4-58.9h96.55C1217.79,919.8,1214.07,950.65,1213.73,960.61Z" transform="translate(-202.67 -903.09)"/><path class="cls-1" d="M1249.84,1096.91h-96.55a60.45,60.45,0,0,0,60.44-60.43C1215.19,1089.62,1249.84,1096.91,1249.84,1096.91Z" transform="translate(-202.67 -903.09)"/></svg>
           </div>
-          <img src="http://technogan.com/uploads/articles/<?= $articles_random[ 0 ]->id ?>/<?= $articles_random[ 0 ]->img ?>" alt="">
+          <img src="https://technogan.com/uploads/articles/<?= $articles_random[ 0 ]->id ?>/<?= $articles_random[ 0 ]->img ?>" alt="">
           <div class="description-articles">
             <div class="title"> <?= $articles_random[ 0 ]->title ?> </div>
             <div class="author">
