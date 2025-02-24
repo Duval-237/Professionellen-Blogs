@@ -1,0 +1,53 @@
+
+#error {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  padding: 20px 0;
+}
+
+#error svg {
+  position: absolute;
+  width: 50%;
+}
+
+#error svg .cls-1 { fill: var(--bg3-light-mode) }
+
+.theme-dark #error svg .cls-1 { fill: var(--bg3-dark-mode) }
+
+#error svg .cls-2{ fill:#e0e0e0 }
+
+.theme-dark #error svg .cls-2{ fill:rgb(61, 61, 61) }
+
+#error svg .cls-3{ fill:#f0f0f0; }
+
+.theme-dark #error svg .cls-3{ fill:rgb(45, 45, 45) }
+
+#error svg .cls-4 { fill: var(--bg2-light-mode) }
+
+.theme-dark #error svg .cls-4 { fill: var(--bg2-dark-mode) }
+
+
+@media all and (max-width: 900px) {
+  #error svg {
+    width: 70%;
+  }
+}
+
+@media all and (max-width: 700px) {
+  #error {
+    height: 50vh;
+  }
+  #error svg {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 400px) {
+  #error {
+    height: 40vh;
+  }
+}
+

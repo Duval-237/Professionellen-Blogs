@@ -1,0 +1,245 @@
+
+section#header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 300px;
+  padding: 0px 10px;
+}
+
+section#header .category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+section#header h1 {
+  font-size: 3em;
+  font-weight: 600;
+  color: var(--clr);
+  margin-bottom: 10px;
+}
+
+section#header p {
+  max-width: 650px;
+  font-size: 1em;
+}
+
+section#articles {
+  position: relative;
+}
+
+section .content-tags {
+  position: sticky;
+  top: 60px;
+  width: 100%;
+  display: flex;
+  background: var(--bg-light-mode);
+  border-top: 1px solid var(--border-light-mode);
+  border-bottom: 1px solid var(--border-light-mode);
+  z-index: 2;
+}
+
+.theme-dark section .content-tags {
+  background: var(--bg-dark-mode);
+  border-top: 1px solid var(--border-dark-mode);
+  border-bottom: 1px solid var(--border-dark-mode);
+}
+
+section .content-tags .menu-tags {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  width: 100%;
+  z-index: 2;
+  overflow: auto;
+}
+
+section .content-tags .menu-tags .item {
+  display: flex;
+  margin-right: 15px;
+}
+
+section .content-tags .menu-tags .item a {
+  position: relative;
+  padding: 5px 10px;
+  height: 40px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  color: var(--bg-dark-mode);
+}
+
+.theme-dark section .content-tags .menu-tags .item a {
+  color: var(--bg-light-mode);
+}
+
+section .content-tags .menu-tags .item a.return {
+  background: var(--bg2-light-mode);
+  margin: 0;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-dark  .content-tags .menu-tags .item a.return {
+  background: var(--bg2-dark-mode);
+}
+
+section .content-tags .menu-tags .item a.return span.svg {
+  margin: 0;
+}
+
+section .content-tags .menu-tags .item a.return span.svg svg {
+  width: 15px;
+}
+
+section .content-tags .menu-tags .item a.return:hover span.svg svg {
+  fill: var(--color-website);
+}
+
+section .content-tags .menu-tags .item a:hover {
+  color: var(--clr);
+}
+
+section .content-tags .menu-tags .item a.enable {
+  color: var(--clr);
+}
+
+section .content-tags .menu-tags .item a.enable::before {
+  content: '';
+  position: absolute;
+  bottom: 0px; left: 0;
+  width: 100%;
+  height: 3px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background: var(--clr);
+}
+
+section .content-tags .menu-tags .item a span.svg {
+  display: flex;
+  margin-right: 8px;
+}
+
+section .content-tags .menu-tags .item a span.svg svg {
+  fill: var(--bg-dark-mode);
+  width: 13px;
+}
+
+.theme-dark section .content-tags .menu-tags .item a span.svg svg {
+  fill: var(--bg-light-mode);
+}
+
+section .content-tags .menu-tags .item a.enable span.svg svg {
+  fill: var(--clr);
+}
+
+section .content-tags .menu-tags .item a:hover span.svg svg {
+  fill: var(--clr);
+}
+
+.container-articles {
+  position: relative;
+  padding: 20px 5px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+}
+
+
+@media all and (max-width: 1180px) {
+  .container-articles {
+    grid-gap: 3px;
+  }
+  .article .box-title p {
+    font-size: 0.9em;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .container-articles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .article {
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .article .categorie-article {
+    font-size: 0.7em;
+  }
+  .article .box-title p {
+    font-size: 1em;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .article .box-title p {
+    font-size: 0.9em;
+  }
+  section#header h1 {
+    font-size: 2.8em;
+    line-height: 50px;
+  }
+  section#header p {
+    max-width: 550px;
+  }
+}
+@media all and (max-width: 700px) {
+  section .content-tags {
+    top: 55px;
+  }
+  section#header h1 {
+    font-size: 2.5em;
+  }
+  section#header p {
+    max-width: 450px;
+  }
+  section .content-tags .menu-tags .item a {
+    padding: 5px;
+  }
+}
+
+
+@media all and (max-width: 550px) {
+  .article .categorie-article {
+    font-size: 0.65em;
+  }
+}
+
+@media all and (max-width: 500px) {
+  section#header {
+    height: 250px;
+  }
+  section#header h1 {
+    font-size: 2.2em;
+  }
+  section#header p {
+    font-size: 0.9em;
+    max-width: 450px;
+  }
+  .container-articles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .article .box-title p {
+    font-size: 0.86em;
+  }
+  .article .categorie-article {
+    padding: 5px 7px 0px;
+  }
+  .article .box-title {
+    padding: 0 7px 10px;
+  }
+
+}
+
+

@@ -1,0 +1,102 @@
+
+.main .top-bar .add {
+  display: flex;
+}
+
+#view {
+  height: calc( 100% - 60px );
+  padding: 20px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container .item {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  background: var(--clr-transparent);
+  border-radius: 5px; 
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.container .item > div {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50px 50px 150px 1fr;
+  gap: 10px;
+  padding: 20px 5px;
+  color: var(--bg-dark-mode);
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.theme-dark .container .item > div {
+  color: var(--bg-light-mode);
+}
+
+.container .item > div span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  font-size: 0.9em;
+}
+
+.container .item > div span svg {
+  fill: var(--clr);
+  height: fit-content;
+  width: 25px;
+}
+
+.container .item > div span.lang {
+  text-transform: uppercase;
+}
+
+.container .item > div span.description {
+  align-items: flex-start;
+  font-size: 0.9em;
+  line-height: 25px;
+  height: 25px;
+  overflow: hidden;
+}
+
+.container .item > div:hover span.description {
+  height: fit-content;  
+}
+
+.container .item .action {
+  display: flex;
+  padding: 20px 5px;
+}
+
+.container .item .action a {
+  display: flex;
+  width: 50%; height: 25px;
+  justify-content: center;
+}
+
+.container .item .action a svg {
+  color: var(--bg-dark-mode);
+  fill: var(--bg-dark-mode);
+  transition: 0.2s;
+}
+
+.theme-dark .container .item .action a svg {
+  color: var(--bg-light-mode);
+  fill: var(--bg-light-mode);
+}
+
+.container .item .action a.edit:hover svg {
+  fill: var(--clr);
+}
+
+.container .item .action a.delete:hover svg {
+  color: #ff2d2d;
+}
+

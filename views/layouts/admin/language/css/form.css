@@ -1,0 +1,88 @@
+
+section#form {
+  height: calc( 100% - 60px );
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+form .imgbx {
+  position: relative;
+  width: 100%; height: 200px;
+  border-radius: 4px;
+  border: 2px dashed #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+form .imgbx img {
+  width: 46px;
+  height: 28px;
+}
+
+form label {
+  position: relative;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+form label span {
+  position: absolute;
+  top: 120px; left: 50%;
+  color: #777;
+  font-size: 0.7em;
+  font-weight: 600;
+  transform: translateX( -50%);
+  user-select: none;
+}
+
+input[ type="file" ] {
+  display: none;
+}
+
+form .inputbx {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+form .inputbx input {
+  padding: 7px 10px;
+  border-radius: 3px;
+  font-size: 1em;
+  width: 100%;
+  border: none;
+  color: var(--bg-dark-mode);
+  background: var(--bg2-light-mode);
+}
+
+.theme-dark form .inputbx input {
+  color: var(--bg-light-mode);
+  background: var(--bg2-dark-mode);
+}
+
+form .inputbx input[name="code"] {
+  width: 100px;
+  margin-right: 15px;
+}
+
+form input[type="submit"] {
+  border: none;
+  font-size: 1em;
+  padding: 6px 0;
+  font-weight: 500;
+  border-radius: 3px;
+  color: var(--bg-light-mode);
+  background: var(--color-website);
+  cursor: pointer;
+}
+

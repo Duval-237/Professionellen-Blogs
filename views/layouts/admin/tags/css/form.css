@@ -1,0 +1,93 @@
+
+#form {
+  height: calc( 100% - 60px );
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  overflow: auto;
+}
+
+#form form {
+  position: relative;
+  width: 100%;
+}
+
+#form form .inputbx {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#form form .inputbx label {
+  font-size: 0.85em;
+  margin-bottom: 7px;
+  margin-left: 10px;
+  font-weight: 600;
+  color: var(--bg3-dark-mode);
+}
+
+.theme-dark #form form .inputbx label {
+  color: var(--bg3-light-mode);
+}
+
+#form form .inputbx input,
+#form form .inputbx textarea,
+#form form .inputbx select {
+  border: none;
+  color: var(--bg-dark-mode);
+  background: var(--bg2-light-mode);
+  padding: 10px;
+  font-size: 0.9em;
+  border-radius: 2px;
+}
+
+.theme-dark #form form .inputbx input,
+.theme-dark #form form .inputbx textarea,
+.theme-dark #form form .inputbx select {
+  color: var(--bg-light-mode);
+  background: var(--bg2-dark-mode);
+}
+
+#form form .inputbx textarea {
+  resize: none;
+  height: 180px;
+}
+
+#form form .inputbx textarea#description {
+  height: 100px;
+}
+
+#form form .contentbx .inputbx select option {
+  color: var(--bg-dark-mode);
+}
+
+.theme-dark #form form .contentbx .inputbx select option {
+  color: var(--bg-light-mode);
+}
+
+#form form .contentbx .inputbx select:invalid{
+  color: #777;
+}
+
+#form form .contentbx {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#form form .contentbx .inputbx {
+  display: flex;
+  width: 250px;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+
+#form form .inputbx input[type='submit'] {
+  background: var( --color-website );
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+

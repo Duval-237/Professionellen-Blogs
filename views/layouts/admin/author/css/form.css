@@ -1,0 +1,127 @@
+
+section#form {
+  height: calc( 100% - 60px );
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* max-width: 1000px; */
+}
+
+form label {
+  margin-left: 10px;
+  font-weight: 500;
+  margin-bottom: 2px;
+  font-size: 0.9em
+}
+
+form > label {
+  position: relative;
+  margin-bottom: 15px;
+  margin-left: 0;
+}
+
+form label .imgbx {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border-radius: 2px;
+  border: 2px dashed #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+form .imgbx span {
+  position: absolute;
+  bottom: 30px;
+  margin: 0;
+  color: #777;
+  font-size: 0.8em;
+}
+
+form label .imgbx img  {
+  position: relative;
+  width: 100px; height: 100px;
+}
+
+form label input[ type="file"] {
+  display: none;
+}
+
+form .inputcontent {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+form .inputcontent .inputbx {
+  width: 48%;
+  margin-bottom: 0;
+}
+form .inputbx {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+form .inputcontent input,
+form textarea,
+form input,
+form select {
+  padding: 7px 10px;
+  border-radius: 2px;
+  font-size: 0.9em;
+  width: 100%;
+  border: none;
+  color: var(--bg-dark-mode);
+  background: var(--bg2-light-mode);
+}
+
+.theme-dark form .inputcontent input,
+.theme-dark  textarea,
+.theme-dark  input,
+.theme-dark  select {
+  color: var(--bg-light-mode);
+  background: var(--bg2-dark-mode);
+}
+
+form  select {
+  width: 250px;
+}
+
+form  select option {
+  color: var(--bg-dark-mode);
+}
+
+.theme-dark form  select option {
+  color: var(--bg-light-mode);
+}
+
+form  select:invalid {
+  color: #777;
+}
+
+form  textarea {
+  resize: none;
+  height: 150px;
+}
+
+form input[type="submit"] {
+  border: none;
+  font-size: 1em;
+  padding: 6px 0;
+  font-weight: 500;
+  border-radius: 2px;
+  color: var(--bg-light-mode);
+  background: var(--color-website);
+  cursor: pointer;
+}
+

@@ -1,0 +1,113 @@
+
+.main .top-bar .add {
+  display: flex;
+}
+
+section#author {
+  position: relative;
+  height: calc( 100% - 60px );
+  padding: 10px;
+  overflow: auto;
+}
+
+img {
+  width: 45px;
+}
+
+.list-author {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.list-author .content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  height: 100px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 2px;
+  background: var(--bg2-light-mode);
+}
+
+.theme-dark .list-author .content {
+  background: var(--bg2-dark-mode);
+}
+
+.list-author .content > a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: var(--bg2-dark-mode);
+}
+
+.theme-dark .list-author .content > a {
+  color: var(--bg2-light-mode);
+}
+
+.list-author .content > a .bximg {
+  position: relative;
+  min-width: 80px; height: 80px;
+  margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.list-author .content > a .bximg img {
+  position: absolute;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.list-author .content > a .info {
+  position: relative;
+  display: grid;
+  grid-template-rows: 20px 1fr auto;
+  width: 100%;
+  flex-direction: column;
+  height: 80px;
+}
+
+.list-author .content > a .info .name {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--color-website);
+}
+
+.list-author .content > a .info .description {
+  font-size: 0.8em;
+  overflow: hidden;
+}
+
+.list-author .content > a .info .date {
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.list-author .content .action  {
+  position: relative;
+  height: 100%;
+  padding: 15px 10px 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list-author .content .action > a {
+  color: var(--bg-dark-mode);
+  fill: var(--bg-dark-mode);
+}
+
+.theme-dark .list-author .content .action > a {
+  color: var(--bg-light-mode);
+  fill: var(--bg-light-mode);
+}
+
+.list-author .content .action a.edit:hover {
+  fill: var(--color-website);
+}
+
+.list-author .content .action a.delete:hover {
+  color: #ff2d2d;
+}
+

@@ -1,0 +1,62 @@
+
+.main .top-bar .add {
+  display: flex;
+}
+
+section#language {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 10px;
+}
+
+img {
+  width: 22px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 20px 15px;
+  width: 200px;
+  border-radius: 3px;
+  background: var(--bg2-light-mode);
+}
+
+.theme-dark .container {
+  background: var(--bg2-dark-mode);
+}
+
+.container .content {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.container .content span {
+  margin-left: 12px;
+}
+
+.container .action {
+  display: flex;
+}
+
+.container .action a {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 50%;
+  color: var(--bg-dark-mode);
+  fill: var(--bg-dark-mode);
+}
+
+.theme-dark .container .action a {
+  color: var(--bg-light-mode);
+  fill: var(--bg-light-mode);
+}
+
+.container .action a:hover {
+  color: #ff2d2d;
+  fill: var(--color-website);
+}
+

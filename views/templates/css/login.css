@@ -1,0 +1,13 @@
+
+body {
+  background: var(--bg-light-mode);
+  color: #000;
+  display: flex;
+  min-height: 100vh;
+}
+
+.theme-dark {
+  background: var(--bg-dark-mode);
+  color: #fff;
+}
+
