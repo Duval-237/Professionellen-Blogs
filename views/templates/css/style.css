@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
   /* --color-website : #fe7802; */
@@ -65,57 +66,6 @@
   background: #007fff7d;
   border: 1px solid var(--primary-color);
 }
-
-
-/* ---------- Poppins ---------- */
-
-@font-face {
-  font-family: poppins;
-  src: url(/lib/fonts/Poppins-Black.ttf);
-  font-weight: 900;
-}
-@font-face {
-  font-family: poppins;
-  src: url(/lib/fonts/Poppins-ExtraBold.ttf);
-  font-weight: 800;
-}
-/* @font-face {
-  font-family: poppins;
-  src: url(/lib/fonts/Poppins-Bold.ttf);
-  font-weight: 700;
-} */
-@font-face {
-  font-family: poppins;
-  src: url(/lib/fonts/Poppins-SemiBold.ttf);
-  font-weight: 600;
-}
-@font-face {
-  font-family: poppins;
-  src: url(/lib/fonts/Poppins-Medium.ttf);
-  font-weight: 500;
-}
-@font-face {
-  font-family: poppins;
-  src: url(/lib/fonts/Poppins-Regular.ttf);
-  font-weight: 400;
-}
-/* @font-face {
-  font-family: poppins;
-  src: url(/lib/fonts/Poppins-Light.ttf);
-  font-weight: 300;
-}
-@font-face {
-  font-family: poppins;
-  src: url(/lib/fonts/Poppins-ExtraLight.ttf);
-  font-weight: 200;
-}
-@font-face {
-  font-family: poppins;
-  src: url(/lib/fonts/Poppins-Thin.ttf);
-  font-weight: 100;
-} */
-
-
 
 *, ::before, ::after {
   margin: 0;
