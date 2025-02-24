@@ -166,9 +166,9 @@ foreach ( $slugs as $key ) {
         <section>
           <h2 class="mini-title">References</h2>
           <ol>
-            <li><a href="#">http://technogan.com/comment_devenir_riche</a></li>
+            <li><a href="#">https://technogan.com/comment_devenir_riche</a></li>
             <li><a href="#">https://blabla.com/dsafa-dsafdei/dasfa</a></li>
-            <!-- <li><a href="#">http://technogan.com/Comment_debloquer_la_monetisation_TikTok_dans_les_pays_non-eligible</a></li> -->
+            <!-- <li><a href="#">https://technogan.com/Comment_debloquer_la_monetisation_TikTok_dans_les_pays_non-eligible</a></li> -->
             <li><a href="#">https://blabla.com/dsafa-dsafdei/dasfa</a></li>
             <li><a href="#">https://blabla.com/dsafa-dsafdei/dasfa</a></li>
           </ol>
@@ -317,7 +317,7 @@ foreach ( $slugs as $key ) {
           </ul>
           <span>Copy the link :</span>
           <div class="bxlink">
-            <span class="link">http://<?= $_SERVER[ 'HTTP_HOST' ] . '/' . $slugArticle ?></span>
+            <span class="link">https://<?= $_SERVER[ 'HTTP_HOST' ] . '/' . $slugArticle ?></span>
             <div class="btn-copy">
               <svg id="Calque_1" data-name="Calque 1" viewBox="0 0 206.72 248.17"><path d="M982.44,862.68q0,35.27,0,70.53c0,19.71-13,32.73-32.6,32.75q-50,0-99.94,0c-19.66,0-32.76-13.05-32.77-32.63q0-70.71,0-141.43c0-19.44,13-32.49,32.45-32.52q50.34-.07,100.68,0c19.21,0,32.14,13.11,32.16,32.39Q982.48,827.22,982.44,862.68ZM962,862.62q0-35.26,0-70.52c0-8.33-3.81-12.31-12-12.32q-50.14,0-100.3,0c-8.2,0-12.14,4-12.14,12.2q0,70.71,0,141.41c0,8.13,4,12.14,12.21,12.14q50,0,99.92,0c8.41,0,12.29-3.94,12.3-12.4Q962,897.88,962,862.62Z" transform="translate(-817.12 -717.8)"/><path d="M1023.83,799.25c0,17.28,0,34.55,0,51.82,0,7.23-4.15,11.52-10.57,11.31a9.76,9.76,0,0,1-9.46-8.18,33.53,33.53,0,0,1-.34-5.49q0-48.32,0-96.65c0-10.37-3.47-13.78-14-13.79q-49.07,0-98.14,0c-7.21,0-11.43-3.35-11.9-9.24a9.82,9.82,0,0,1,8.25-10.84,21.51,21.51,0,0,1,4-.35q49.8,0,99.61,0c16.28,0,28.55,9.5,31.83,24.51a42,42,0,0,1,.69,8.76C1023.86,767.16,1023.83,783.21,1023.83,799.25Z" transform="translate(-817.12 -717.8)"/></svg>
             </div>
