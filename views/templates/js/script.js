@@ -158,7 +158,7 @@ if ( connexion ) {
   function createCookie() {
     let date = new Date();
     date.setTime( date.getTime() + 60 * 20 * 1000 );
-    document.cookie = `hideFormConnexion=true; expires=${date.toUTCString()}; path=/; domain=technoghan.com`;
+    document.cookie = `hideFormConnexion=true; expires=${date.toUTCString()}; path=/; domain=technogan.com`;
   }
 
   if ( document.cookie.indexOf( 'hideFormConnexion' ) === -1 )
@@ -385,7 +385,7 @@ if ( img_profil ) {
     let date = new Date();
 
     date.setTime( date.getTime() + ( 60 * 60 * 24 * 1000 ) );
-    document.cookie = `hideNewsletter=true; expires=${date.toUTCString()}; path=/; domain=technoghan.com`;
+    document.cookie = `hideNewsletter=true; expires=${date.toUTCString()}; path=/; domain=technogan.com`;
     pop_up_newsletter.classList.remove( 'enable' )
   }, true );
 })();
