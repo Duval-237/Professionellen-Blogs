@@ -1,9 +1,10 @@
 <?php
 
 /**
- * Cette classe gere les donnees du site
- * 
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * =================================================
+ * Cette classe gere la connexion a l'administration
+ * =================================================
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 

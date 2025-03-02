@@ -4,7 +4,7 @@
  * ===================================
  * Cette classe gere la table collection
  * ===================================
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 
@@ -41,12 +41,24 @@ class Collection extends Model
 
     return $this->request( $sql )->fetchAll();
   }
-
+  
+  /**
+   * Verifie si un article a deja ete ajoute a la collection
+   *
+   * @param  string $id_article
+   * @param  int $id_user
+   * @return void
+   */
   public function verifyCollection( string $id_article, $id_user )
   {
     return $this->request( "SELECT * FROM {$this->table} WHERE id_article = ? AND id_user = ?", [ $id_article, $id_user ] )->fetch();
   }
-
+  
+  /**
+   * deleteCollection
+   *
+   * @return object
+   */
   public function deleteCollection():object
   {
     return $this->request( "DELETE FROM {$this->table} WHERE id_article = ? AND id_user = ?", [ $this->id_article, $this->id_user ] );

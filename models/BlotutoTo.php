@@ -3,7 +3,7 @@
 /**
  * Cette classe gere les donnees du site
  * 
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 
