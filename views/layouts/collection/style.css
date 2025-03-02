@@ -24,11 +24,7 @@
 
 #collection h1 svg {
   width: 13px;
-  fill: var(--bg-dark-mode);
-}
-
-.theme-dark #collection h1 svg {
-  fill: var(--bg-light-mode);
+  fill: var(--primary-text1-color);
 }
 
 #collection .container-article {
@@ -61,11 +57,7 @@
 
 #collection .container-article article .bottom .svg svg {
   width: 12px;
-  fill: var(--bg3-dark-mode);
-}
-
-.theme-dark #collection .container-article article .bottom .svg svg {
-  fill: var(--bg3-light-mode);
+  fill: var(--primary-text3-color);
 }
 
 @media all and ( max-width: 1000px ) {
@@ -104,3 +96,4 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+

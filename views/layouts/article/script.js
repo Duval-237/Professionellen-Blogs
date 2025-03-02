@@ -1,4 +1,27 @@
 
+function showMessage( type = null ) {
+  const container_confirmation = document.querySelector( '.container-confirmation' );
+
+  if ( type === 'avis' )
+    document.querySelector( '.message-avis' ).style.display = "block";
+  else
+    document.querySelector( '.message-copie' ).style.display = "block";
+
+  container_confirmation.style.display = "block";
+
+  setTimeout(() => {
+    container_confirmation.classList.add( 'enable' );
+  }, 10);
+
+  setTimeout(() => {
+    setTimeout(() => {
+      container_confirmation.style.display = "none";
+    }, 500);
+    container_confirmation.classList.remove( 'enable' );
+  }, 3000);
+}
+
+
 // Pour telecharger le pdf
 ( function() {
   const article = document.querySelector( 'article.container' );
@@ -19,6 +42,7 @@
         link = document.querySelector( '#share .link' ),
         btn_copy = document.querySelector( '#share .btn-copy' );
 
+
   // Bouton share
   const btn_share = document .querySelector( '.options .share' );
   btn_share.addEventListener( 'click', _ => {
@@ -29,15 +53,12 @@
   share.addEventListener( 'click', _ => share.classList.remove( 'enable' ), true );
   container.addEventListener( 'click', _ => share.classList.add( 'enable' ), true );
 
-  window.addEventListener( 'scroll', _ => share.classList.remove( 'enable' ) );
-
   btn_copy.addEventListener( 'click', () => {
-    share.classList.remove( 'enable' );
+    showMessage();
     navigator.clipboard.writeText( link.textContent );
   } );
 
 })();
-
 
 // Pour Enregistrer l'articles
 ( function() {
@@ -129,18 +150,49 @@
 ( function() {
   const btn_yes = document.querySelector( '.btn-evaluation.yes' ),
         btn_no = document.querySelector( '.btn-evaluation.no' ),
+        evaluation = document.querySelector( '.evaluation' ),
         box_btn = document.querySelector( '.box-evaluation' ),
         box_oui = document.querySelector( '.box-reponse.oui' ),
         box_non = document.querySelector( '.box-reponse.non' );
 
-  btn_yes.addEventListener( 'click', _ => {
-    box_oui.style.display = 'block';
-    box_btn.style.display = 'none';
-  });
-  btn_no.addEventListener( 'click', _ => {
-    box_non.style.display = 'block';
-    box_btn.style.display = 'none';
-  });
+  if ( evaluation ) {
+    btn_yes.addEventListener( 'click', _ => {
+      box_oui.style.display = 'block';
+      box_btn.style.display = 'none';
+    });
+    btn_no.addEventListener( 'click', _ => {
+      box_non.style.display = 'block';
+      box_btn.style.display = 'none';
+    });
+
+    const btn_send_non = document.querySelector( '#btn-send-non' ),
+          btn_send_oui = document.querySelector( '#btn-send-oui' ),
+          slugArticle = document.querySelector( 'article.container' ).dataset.slug;
+
+    // Form non
+    btn_send_non.addEventListener( 'click', (e) => {
+      e.preventDefault();
+      var raison = document.querySelector( 'input[name="non-raison"]:checked' )?.value;
+
+      if ( raison !== '' && raison !== undefined ) {
+        requestAjax( 'POST', `article/index`, `raison=${raison}&slug=${slugArticle}`);
+        evaluation.style.display = 'none';
+        showMessage( 'avis' );
+      }
+    });
+
+    // Form oui
+    btn_send_oui.addEventListener( 'click', (e) => {
+      e.preventDefault();
+      var message = document.querySelector( '#message-avis' ).value
+
+      if ( message !== '' ) {
+        requestAjax( 'POST', `article/index`, `message-avis=${message}&slug=${slugArticle}`);
+        evaluation.style.display = 'none';
+        showMessage( 'avis' );
+      }
+    });
+  }  
 
 })();
 

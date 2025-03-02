@@ -2,55 +2,47 @@
 
 :root {
   /* --color-website : #fe7802; */
-  /* --color-website : #007fff; */
-  --color-website2 : #0d1117;
-
-  --bg-light-mode: #fff;
-  --bg-dark-mode: #0d1117;
-
-  --bg2-light-mode: #eee;
-  --bg2-dark-mode: #1e2228;
-
-  --bg3-light-mode: #ccc;
-  --bg3-dark-mode: #40444a;
-
-  --border-light-mode: #ddd;
-  --border-dark-mode: #2f3339;
-
-
+  /* --color-website2 : #0d1117; */
+  
   --primary-color: #007fff;
 
-  --primary-bg1-color: var(--bg-light-mode);
-  --primary-bg2-color: var(--bg2-light-mode);
-  --primary-bg3-color: var(--bg3-light-mode);
-
-  --primary-border-color: var(--border-light-mode);
-
-  --primary-text1-color: var(--bg-dark-mode);
-  --primary-text2-color: var(--bg2-dark-mode);
-  --primary-text3-color: var(--bg3-dark-mode);
+  --light-color:#fff;
+  --light-color100:#eee;
+  --light-color200:#ddd;
+  --light-color300:#ccc;
+  --dark-color:#0d1117;
+  --dark-color100:#1e2228;
+  --dark-color200:#2f3339;
+  --dark-color300:#40444a;
+  --whatsapp-color: #25D366;
+  
+  --primary-bg1-color: var(--light-color);
+  --primary-bg2-color: var(--light-color100);
+  --primary-bg3-color: var(--light-color300);
+  --primary-border-color: var(--light-color200);
+  --primary-text1-color: var(--dark-color);
+  --primary-text2-color: var(--dark-color100);
+  --primary-text3-color: var(--dark-color300);
 }
 
 .theme-dark {
-  --primary-bg1-color: var(--bg-dark-mode);
-  --primary-bg2-color: var(--bg2-dark-mode);
-  --primary-bg3-color: var(--bg3-dark-mode);
-
-  --primary-border-color: var(--border-dark-mode);
-
-  --primary-text1-color: var(--bg-light-mode);
-  --primary-text2-color: var(--bg2-light-mode);
+  --primary-bg1-color: var(--dark-color);
+  --primary-bg2-color: var(--dark-color100);
+  --primary-bg3-color: var(--dark-color300);
+  --primary-border-color: var(--dark-color200);
+  --primary-text1-color: var(--light-color);
+  --primary-text2-color: var(--light-color100);
   --primary-text3-color: var(--bg3-light-mode);
 }
 
 ::selection {
   background: var(--primary-color);
-  color: var(--bg-light-mode);
+  color: var(--light-color);
 }
 
 ::-moz-selection {
   background: var(--primary-color);
-  color: var(--bg-light-mode);
+  color: var(--light-color);
 }
 
 ::-webkit-scrollbar {
@@ -58,8 +50,8 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-bg2-color);
-  border: 1px solid var(--primary-border-color);
+  background: var(--primary-border-color);
+  border: 1px solid var(--primary-bg3-color);
 }
 
 ::-webkit-scrollbar-thumb:active {

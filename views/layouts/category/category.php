@@ -3,14 +3,14 @@ $title_page = "$categorie->name | Technogan";
 $file_css = 'views/layouts/category/css/category.css';
 $file_js = '<script defer src="/views/layouts/category/script.js"></script>';  
 
-
 $description_page = $categorie->description;
 
 $slug = [
   'fr' => "Catégorie",
   'en' => "Category",
   'de' => "Kategorie",
-  'es' => "Catégorie"
+  'es' => "Catégorie",
+  'zh' => "Catégorie"
 ];
 ?>
 

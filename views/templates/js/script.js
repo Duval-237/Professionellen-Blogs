@@ -154,11 +154,28 @@
         bx2_reset_password = document.querySelector( '.reset-password' );
   
 if ( connexion ) {
-  connexion.addEventListener( 'click', _ => connexion.classList.remove( 'enable' ),true );
+
+  function createCookie() {
+    let date = new Date();
+    date.setTime( date.getTime() + 60 * 20 * 1000 );
+    document.cookie = `hideFormConnexion=true; expires=${date.toUTCString()}; path=/; domain=technoghan.com`;
+  }
+
+  if ( document.cookie.indexOf( 'hideFormConnexion' ) === -1 )
+    connexion.classList.add( 'enable' );
+
   container_connexion.addEventListener( 'click', _ => connexion.classList.add( 'enable' ), true );
+  
+  connexion.addEventListener( 'click', _ => {
+    createCookie();
+    connexion.classList.remove( 'enable' );
+  }, true );
 
   btn_close.forEach( item => {
-    item.addEventListener( 'click', _ => connexion.classList.remove( 'enable' ) );
+    item.addEventListener( 'click', _ => {
+      createCookie();
+      connexion.classList.remove( 'enable' );
+    });
   });
   
   btn_return.forEach( item => {
@@ -197,7 +214,6 @@ if ( connexion ) {
         formLogin = document.querySelector( '#formLogin' );
       
   var regex =  /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/;
-  
 
   email_login.addEventListener( 'input', _ => {
     errorbx[0].style.opacity = 0;
@@ -299,18 +315,12 @@ if ( connexion ) {
 // Si l'utilisateur est connecte
 if ( img_profil ) {
 
-  // document.addEventListener( 'click', _ =>  {
-  //   if ( menu_profil.classList.contains( 'enable' ) ) {
-  //     menu_profil.classList.add( 'enable' );
-  //   }  
-  // //
-  // });
+  document.addEventListener( 'click', (e) =>  {
+    if ( !menu_profil.contains( e.target ) ) menu_profil.classList.remove( 'enable' ) 
+  }, true );
 
-  img_profil.addEventListener( 'click', _ => {
-    menu_profil.classList.toggle( 'enable' );
-  });
+  img_profil.addEventListener( 'click', _ => menu_profil.classList.toggle( 'enable' ) );
   
-
   btn_signOut.forEach( item => {
     item.addEventListener( 'click', (e) => {
       e.preventDefault();
@@ -328,20 +338,22 @@ if ( img_profil ) {
  */
 ( function () {
   //initialisation des variables
-  const pop_up_newsletter = document.querySelector( '#select-language' ),
+  const pop_up_translate = document.querySelector( '#select-language' ),
         box_select = document.querySelector( '.box-select' ),
         btn_close = document.querySelector( '#select-language .btn-close' ),
         all_language = document.querySelectorAll( '.all-language' );
   
   all_language.forEach( item => {
     item.addEventListener( 'click', _ => {
-      pop_up_newsletter.classList.add( 'enable' );
+      pop_up_translate.classList.add( 'enable' );
     } );
   } );
 
-  pop_up_newsletter.addEventListener( 'click', _ => pop_up_newsletter.classList.remove( 'enable' ),true );
-  box_select.addEventListener( 'click', _ => pop_up_newsletter.classList.add( 'enable' ),true );
-  btn_close.addEventListener( 'click', _ => pop_up_newsletter.classList.remove( 'enable' ),true );
+  pop_up_translate.addEventListener( 'click', _ => pop_up_translate.classList.remove( 'enable' ),true );
+  box_select.addEventListener( 'click', _ => pop_up_translate.classList.add( 'enable' ),true );
+  btn_close.addEventListener( 'click', _ => pop_up_translate.classList.remove( 'enable' ), true );
+
+  // console.log( 'bonjour' );
 
   // const btn_language = [ ...document.querySelectorAll( '.languages .item' ) ];
 
@@ -363,9 +375,20 @@ if ( img_profil ) {
   const pop_up_newsletter = document.querySelector( '#pop-up-newsletter' ),
         button_close = document.querySelector( '#pop-up-newsletter .button-close' );
 
-  button_close.addEventListener( 'click', _ => pop_up_newsletter.classList.remove( 'enable' ),true );
 
-} ) ();
+  // Si le hideNewsletter n'existe pas
+  if ( document.cookie.indexOf( 'hideNewsletter' ) === -1 )
+    pop_up_newsletter.classList.add( 'enable' )
+
+
+  button_close.addEventListener( 'click', _ => {
+    let date = new Date();
+
+    date.setTime( date.getTime() + ( 60 * 60 * 24 * 1000 ) );
+    document.cookie = `hideNewsletter=true; expires=${date.toUTCString()}; path=/; domain=technoghan.com`;
+    pop_up_newsletter.classList.remove( 'enable' )
+  }, true );
+})();
 
 
 /**

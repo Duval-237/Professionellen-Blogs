@@ -26,7 +26,7 @@
       <svg viewBox="0 0 448 512">
         <path d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-4.5-9-16-9.6-22.5-2l-25.2 29.3c-6.6 7.6-18.5 7.4-24.7-.5c-16.5-21-46-58.5-62.8-79.8c-6.3-8-18.3-8.1-24.7-.1c-33.8 42.5-50.8 69.3-50.8 99.4C112 375.4 162.6 416 225.7 416z"/>
       </svg>
-      <span>Les plus recents</span>
+      <span><?= TEXT_HOME_RECENT ?></span>
     </h2>
     <div class="post-box-articles1">
       <?php foreach ( $recent_post as $article ): ?>
@@ -147,7 +147,7 @@
       <svg viewBox="0 0 512 512">
         <path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"></path>
       </svg>
-      <span>Vous pourriez aussi aimer</span>
+      <span><?= TEXT_MAY_LIKE ?></span>
     </h2>
     <div class="post-box-articles2">
       <?php foreach ( $all_post as $article ): ?>
@@ -163,27 +163,6 @@
         </a>
       </article>
       <?php endforeach; ?>
-
-      <!-- <article class="article"  style="--clr:#007fff; --clr-transparent:#007fff30;">
-        <a href="#" class="box-img">
-          <img src="/storage/img/website/test.jpg" loading="lazy" alt="">
-        </a>
-        <a href="#" class="categorie-article"><span>Developpement personnel</span></a>
-        <a href="#" class="box-title">
-          <p>Comment jouer au paintball</p>
-        </a>
-      </article>
-      
-      <article class="article"  style="--clr:#a34df9; --clr-transparent:#a34df930;" >
-        <a href="#" class="box-img">
-          <img src="/storage/img/website/test.jpg" loading="lazy"  alt="">
-        </a>
-        <a href="#" class="categorie-article"><span>Technologie</span></a>
-        <a href="#" class="box-title">
-          <p>Comment etre eligible a la monetisation en afrique avec bloggastuce</p>
-        </a>
-      </article> -->
-
     </div>
   </div>
 </section>
