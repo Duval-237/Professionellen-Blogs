@@ -4,7 +4,7 @@
  * ============================
  * Gestion de la page d'acceuil
  * ============================
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 
@@ -54,10 +54,10 @@ class Main extends Controller
         if ( $email == $userModel->getEmail() && password_verify( $password, $userModel->getPassword() ) )
           $userModel->setSession();
         else
-          echo "Adresse Email ou Mot de Passe Incorrect";
+          echo TEXT_ERROR_EMAIL_PASSWORD;
 
       } else {
-         echo "Adresse Email ou Mot de Passe Incorrect";
+         echo TEXT_ERROR_EMAIL_PASSWORD;
       }
     }
     // Formulaire d'inscription
@@ -84,10 +84,10 @@ class Main extends Controller
           $userModel->create();
           $userModel->setSession();
         } else {
-          echo "Mot de passe doit avoir au moins 8 caracteres";
+          echo TEXT_PASSWORD_8;
         }
       } else {
-        echo "Cette email existe deja";
+        echo TEXT_EMAIL_EXISTS;
       }
     }
     // Sauvegarde du theme de l'utilisateur

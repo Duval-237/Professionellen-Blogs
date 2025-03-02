@@ -4,7 +4,7 @@
  * ==============================
  * Cette classe  gere les erreurs
  * ==============================
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 

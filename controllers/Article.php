@@ -4,15 +4,16 @@
  * ======================================================
  * Cette classe s'occupe de page d'affichage des articles
  * ======================================================
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 
 namespace Core\controllers;
 
 use Core\models\Collection;
+use Core\models\Evaluation;
 use Core\src\Form;
-use Core\src\controller;
+use Core\src\Controller;
 use Core\models\Tags;
 use Core\models\Category;
 use Core\models\Article as ArticleModels;
@@ -40,12 +41,12 @@ class Article extends Controller
       $Category = new Category();
       $Tags = new Tags();
 
-      // Recupere l'id de l'articles grace a son slug
+      // Recupere l'id de l'article, Category, tags
       $id_article = $articles->id;
       $id_category = $Category->findId( $articles->category )->id_category;
       $id_tags = $Tags->findId( $articles->tags )->id_tags;
       
-      // Recupere le nombre de vue de vue
+      // Recupere le nombre de vue
       $view_article = $articleModels->getView( $id_article )->views;
       $view_category = $Category->getView( $id_category )->views;
       $view_tags = $Tags->getView( $id_tags )->views;
@@ -69,13 +70,19 @@ class Article extends Controller
       $orther_articles_category6 = $articleModels->findByCategory( $id_category, 12 );
       $random_articles = $articleModels->randomPost( 4 );
 
+      // Collection
       $collection = new Collection();
 
       $collect = 0;
       if ( $collection->verifyCollection( $id_article, $_SESSION[ 'user' ][ 'id' ] ?? '' ) )
         $collect = 1;
+
+      // Evaluation
+      $evaluation = new Evaluation();
+      $evaluations = $evaluation->verifieIp( $_SERVER[ 'REMOTE_ADDR' ], $id_article );
+      $avis = $evaluations ? 1 : 0;
   
-      $this->render( 'index', [ 'slugs' => $slugs, 'articles' => $articles, 'id' => $id_article, 'slugArticle' => $slug, 'otherArticles' => $orther_articles_category, 'otherArticles6' => $orther_articles_category6, 'randomArticles' => $random_articles, 'collection' => $collect ] );
+      $this->render( 'index', [ 'slugs' => $slugs, 'articles' => $articles, 'id' => $id_article, 'slugArticle' => $slug, 'otherArticles' => $orther_articles_category, 'otherArticles6' => $orther_articles_category6, 'randomArticles' => $random_articles, 'collection' => $collect, 'avis' => $avis ] );
     } else {
       Error_found::error( 404 );
     }
@@ -92,6 +99,35 @@ class Article extends Controller
 
       $collect == 'on' ? $collection->create() : $collection->deleteCollection();
     }
+
+    
+    /**
+     * Pour ajouter un avis a la base de donnee
+     *
+     * @param  string $slug
+     * @param  int $utile
+     * @param  string $message
+     * @return void
+     */
+    function addAvis( string $slug, int $utile, string $message ):void {
+      $slug = htmlspecialchars( $slug );
+      $utile = htmlspecialchars( $utile );
+      $message = htmlspecialchars( $message );
+
+      $articleModels = new ArticleModels();
+      $evaluation = new Evaluation();
+      $evaluation->setId_article( $articleModels->findIdSlug( $slug )->id )
+                 ->setIp_user( $_SERVER[ 'REMOTE_ADDR' ] )
+                 ->setUtile( $utile )
+                 ->setMessage( $message);
+      $evaluation->create();
+    }
+
+    // Pour donner son avis
+    if ( isset( $_POST[ 'message-avis' ] ) AND isset( $_POST[ 'slug' ] ) ) 
+      addAvis( $_POST[ 'slug' ], 1, $_POST[ 'message-avis' ] );
+    else if ( isset( $_POST[ 'raison' ] ) AND isset( $_POST[ 'slug' ] ) )
+      addAvis( $_POST[ 'slug' ], 0, $_POST[ 'raison' ] );
   }
 
   /**

@@ -4,7 +4,7 @@
  * ===========================================
  * Cette classe gere l'affichage des categoies
  * ===========================================
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 

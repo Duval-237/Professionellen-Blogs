@@ -4,7 +4,7 @@
  * =============================================
  * Cette classe permet de gerer l'administration
  * =============================================
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 
@@ -334,7 +334,7 @@ class Admin extends Controller
       $articles = $articleModels->findAllPost( 'fr' );
 
       foreach ( $articles as $article )
-        $article->mois = $this->getMonth( $article->mois, 'fr' );
+        $article->mois = $this->getMonth( $article->mois );
       
       $this->render( 'articles/index', compact( 'articles'), 'admin' );
     }
@@ -482,7 +482,7 @@ class Admin extends Controller
       $categories = $categoryModels->findAllCategory( 'fr' );
 
       foreach ( $categories as $category )
-        $category->date = $category->jour . ' ' . $this->getMonth( $category->mois, 'fr' ) . ' ' . $category->annee;
+        $category->date = $category->jour . ' ' . $this->getMonth( $category->mois ) . ' ' . $category->annee;
 
       $this->render( 'categories/index', compact( 'categories' ), 'admin' );
     }
@@ -635,7 +635,7 @@ class Admin extends Controller
       $tags = $tagsModels->findAllTags( 'fr' );
 
       foreach ( $tags as $tag )
-        $tag->date = $tag->jour . ' ' . $this->getMonth( $tag->mois, 'fr' ) . ' ' . $tag->annee;
+        $tag->date = $tag->jour . ' ' . $this->getMonth( $tag->mois ) . ' ' . $tag->annee;
 
       $this->render( 'tags/index', compact( 'tags' ), 'admin' );      
     }
@@ -792,7 +792,7 @@ class Admin extends Controller
       $authors = $authorModels->findAuthor( 'fr' );
 
       foreach( $authors as $author )
-        $author->date = $author->jour . ' ' . $this->getMonth( $author-> mois, 'fr' ) . ' ' . $author->annee;
+        $author->date = $author->jour . ' ' . $this->getMonth( $author-> mois ) . ' ' . $author->annee;
 
       $this->render( 'author/index', compact( 'authors' ), 'admin' );
     }

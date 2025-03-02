@@ -4,7 +4,7 @@
  * ===========================================================
  * Cette classe permet d'afficher les resultat le la recherche
  * ===========================================================
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 

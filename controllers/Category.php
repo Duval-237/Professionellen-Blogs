@@ -4,14 +4,14 @@
  * ===========================================
  * Cette classe gere l'affichage des categoies
  * ===========================================
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 
 namespace Core\controllers;
 
 use Core\models\Article;
-use Core\src\controller;
+use Core\src\Controller;
 use Core\models\Category as CategoryModels;
 use Core\models\Tags;
 
