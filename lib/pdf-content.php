@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="http://technogan.com/uploads/website/technogan.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://technogan.com/uploads/website/technogan.ico" type="image/x-icon">
     <title><?= $article->title ?></title>
     <style>
       * {
@@ -184,7 +184,7 @@
       <div class="link">Technogan.com</div>
     </div>
     <div class="container">
-      <?= str_replace( '/uploads/articles/', 'http://technogan.com/uploads/articles/', $article->content) ?>
+      <?= str_replace( '/uploads/articles/', 'https://technogan.com/uploads/articles/', $article->content) ?>
         <section>
           <h2><span>1</span><span>Lorem ipsum dolor sit amet consectetur.</span></h2>
           <div class="box-img"><img src="/storage/confiant.jpeg" alt="Acceptez-vous tel que vous êtes"></div>
@@ -230,3 +230,4 @@
     </div>
   </body>
 </html>
+
