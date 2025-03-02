@@ -4,7 +4,7 @@
  * ===================================
  * Cette class est le Model principale
  * ===================================
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 

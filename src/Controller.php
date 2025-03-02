@@ -4,7 +4,7 @@
  * =================================================
  * Cette class est le coeur de tous les controlleurs
  * =================================================
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 
@@ -75,51 +75,41 @@ abstract class Controller
    * @param  string $date la date en question
    * @return void
    */
-  public function timeOut( string &$date )
+  public function timeOut( string &$date ): void
   {
     $timesstampPost =  strtotime( $date );
     $timesstampActuel = time();
     $diff = $timesstampActuel - $timesstampPost;
   
-    if ( $diff < 60 ) {
-      $date = "$diff secondes";
-    } else if ( $diff < 3600 ) {
-      $date = floor( $diff / 60 ) . " minutes";
+    if ( $diff < 3600 ) {
+      $nbre = floor( $diff / 60 );
+      $nbre < 1 ? $date = $nbre . ' ' . WORD_MINUTE : $nbre . ' ' . WORD_MINUTE_PL;
     } else if ( $diff < 86400 ) {
-      $date = floor( $diff / 3600 ) . " heures";
+      $nbre = floor( $diff / 3600 );
+      $nbre < 1 ? $date = $nbre . ' ' . WORD_HOUR : $nbre . ' ' . WORD_HOUR_PL;
     } else if ( $diff < 2592000 ) {
-      $date = floor( $diff / 86400 ) . " jour";
+      $nbre = floor( $diff / 86400 );
+      $nbre < 1 ? $date = $nbre . ' ' . WORD_DAY : $nbre . ' ' . WORD_DAY_PL;
     } else if ( $diff < 31536000 ) {
-      $date = floor( $diff / 2592000 ) . " mois";
+      $nbre = floor( $diff / 2592000 );
+      $nbre < 1 ? $date = $nbre . ' ' . WORD_MONTH : $date = $nbre . ' ' . WORD_MONTH_PL;
     } else {
-      $date = floor( $diff / 31536000 ) . " ans";
+      $nbre = floor( $diff / 31536000 );
+      $nbre < 1 ? $date = $nbre . ' ' . WORD_YEAR : $date = $nbre . ' ' . WORD_YEAR_PL;
     }
   }
 
   /**
    * Retourne le mois grace a son numero
    *
-   * @param  int $month
-   * @param  string $lang la langue dans laquelle on veut recuperer
+   * @param  int $month le chiffre qui designe le mois
    * @return string
    */
-  public function getMonth( int $month, string $lang = null ):string
+  public function getMonth( int $month ):string
   {
-    $lang ??= $_SESSION[ 'language' ];
+    $tab_month = [ WORD_JANUARY, WORD_FEBRUARY, WORD_MARCH, WORD_APRIL, WORD_MAY, WORD_JUNE, WORD_JULY, WORD_AUGUST, WORD_SEPTEMBER, WORD_OCTOBER, WORD_NOVEMBER, WORD_DEZEMBER ];
 
-    $tab_month = [ 
-      'fr' => [ 'janvier', 'fevrier', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'decembre' ], 
-      'en' => [ 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december' ], 
-      'de' => [ 'januar', 'februar', 'mars', 'april', 'mai', 'juni', 'july', 'august', 'september', 'october', 'november', 'december' ], 
-      'es' => [ 'janvier', 'fevrier', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'decembre' ], 
-      'zh' => [],
-    ];
-    
-    // Si la langue n'existe pas je renvoie le francais
-    if ( !$tab_month[ $lang ] )
-      return $tab_month[ 'fr' ][ $month - 1 ];
-    
-    return $tab_month[ $lang ][ $month - 1 ];
+    return $tab_month[ $month - 1 ];
   }
   
 }

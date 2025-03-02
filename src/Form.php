@@ -4,7 +4,7 @@
  * =============================================
  * Cette class permet de generer les formulaires
  * =============================================
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 

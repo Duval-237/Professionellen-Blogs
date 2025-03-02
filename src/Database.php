@@ -4,7 +4,7 @@
  * ==================================
  * Configuration de la base de donnee
  * ==================================
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 
@@ -24,7 +24,7 @@ class Database extends PDO
    * Nom de la base de donnee
    * @var string
    */
-  private const DB_NAME = "blogtutodata";
+  private const DB_NAME = "technogan";
   /**
    * Nom d'utilisateur
    * @var string

@@ -4,7 +4,7 @@
  * ===============================
  * La class principale ( Routeur )
  * ===============================
- * @author Duval Tetsol <nzouekeuduval@gmail.com>
+ * @author Duval Nzouekeu <nzouekeuduval@gmail.com>
  * 
  */
 
@@ -19,18 +19,18 @@ class Main
   public function start()
   {
     session_set_cookie_params( [
-      'lifetime' => time() + 365 * 24 * 3600,
+      'lifetime' => time() + 7 * 24 * 3600,
       'path' => '/',
-      'domain' => 'technogan.com',
+      'domain' => 'technoghan.com',
       'secure' => FALSE,
-      'httponly' => FALSE
+      'httponly' => TRUE
     ]);
     // Demare la session
     session_start();
     
     // Recuperation de la langue du navigateur par son sous domaine
     $sous_domain = explode( '.', $_SERVER[ 'HTTP_HOST' ] )[0];
-    $_SESSION[ 'language' ] = $sous_domain !== "technogan" ? $sous_domain : 'fr';
+    $_SESSION[ 'language' ] = $sous_domain !== "technoghan" ? $sous_domain : 'fr';
     // J'appele le fichier concernant la langue
     require_once ROOT . "lib/lang/lang_{$_SESSION[ 'language' ]}.php";
 
@@ -65,7 +65,7 @@ class Main
 
       // Contient le chemin du controller
       $file = ROOT . 'controllers' . DIRECTORY_SEPARATOR . $controller . '.php';
-
+      
       // Verifie si le controller existe et le controlleur != de article
       if ( file_exists( $file ) && $controller !== 'Category' ) {  
         $controller = "\\Core\\controllers\\{$controller}";
@@ -106,17 +106,29 @@ class Main
   public static function theme():void
   {
     // L'orsque la requete pour changer de theme est soumisse
+    // if ( isset( $_POST[ 'theme' ] ) ) {
+    //   $options = [ 
+    //     'expire' => time() + 365 * 24 * 3600,
+    //     'path' => '/',
+    //     'domain' => 'technoghan.com',
+    //     'secure' => FALSE,
+    //     'httponly' => FALSE, // Bloquer Accessibilite par JS
+    //     'samesite' => 'Strict'
+    //   ];
+    //   echo $_POST[ 'theme' ];
+    //   setcookie( 'theme', $_POST[ 'theme' ], $options );  
+    // }
+  
     if ( isset( $_POST[ 'theme' ] ) ) {
-      $options = [ 
-        'expire' => time() + 365 * 24 * 3600,
-        'path' => '/',
-        'domain' => 'technogan.com',
-        'secure' => FALSE,
-        'httponly' => FALSE, // Bloquer Accessibilite par JS
-        'samesite' => 'Strict'
-      ];
-      setcookie( 'theme', $_POST[ 'theme' ], $options );
+      $expire = time() + 365 * 24 * 3600;
+      $path = '/';
+      $domain = 'technoghan.com';
+      $secure = FALSE;
+      $httponly = FALSE;
+  
+      setcookie( 'theme', $_POST[ 'theme' ], $expire, $path, $domain, $secure, $httponly );
     }
+  
 
     // Verifie si la session utilisateur est demarer
     if ( isset( $_SESSION[ 'user' ] ) ) 
