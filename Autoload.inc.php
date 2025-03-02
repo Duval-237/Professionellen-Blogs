@@ -1,12 +1,13 @@
 <?php
-#IEM impulsion electro magnetique
+
 /**
  * ==================================================================
  * Cette classe require_once automatique la class dont ont n'a besoin
  * ==================================================================
- * @author Duval Tetsol < nzouekeuduval@gmail.com >
+ * @author Duval Nzouekeu < nzouekeuduval@gmail.com >
  * 
  */
+
 namespace Core;
 
 // si l'utilisateur essaie d'acceder a cet page
@@ -25,7 +26,7 @@ class Autoload
    *
    * @return void
    */
-  static function register():void
+  public static function register():void
   {
     spl_autoload_register( [
       __CLASS__,
@@ -39,16 +40,16 @@ class Autoload
    * @param string $class Recupere la totalite du namespace de la classe concernee
    * @return void
    */
-  static function load ( string $class ):void
+  public static function load ( string $class ):void
   {
     // Retire le nom du namespace
     $class = str_replace( __NAMESPACE__ . '\\', '', $class );
     $file =  ROOT . $class . '.php';
+    $file = str_replace( '\\', '/', $file );
     
     // Verifie si le fichier existe avant de l'inclure
     if ( file_exists( $file ) )
-      require_once ROOT . $class . '.php' ;
+      require_once $file;
   }
-
 }
 
